@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit {{ user.full_name }}{% endblock %}
+
+{% block content %}
+
+<!-- Header for the Edit User page -->
+<h1>Edit a user</h1>
+
+<!-- Form for editing an existing user -->
+<form method="POST">
+
+  <!-- Form group for first name input -->
+  <div class="form-group row">
+    <label for="first_name" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text"
+             class="form-control"
+             id="first_name"
+             name="first_name"
+             value="{{ user.first_name }}">
+    </div>
+  </div>
+
+  <!-- Form group for last name input -->
+  <div class="form-group row">
+    <label for="last_name" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text"
+             class="form-control"
+             id="last_name"
+             name="last_name"
+             value="{{ user.last_name }}">
+    </div>
+  </div>
+
+  <!-- Form group for image URL input -->
+  <div class="form-group row">
+    <label for="image_url" class="col-sm-2 col-form-label">Image URL</label>
+    <div class="col-sm-10">
+      <input type="text"
+             class="form-control"
+             id="image_url"
+             name="image_url"
+             value="{{ user.image_url }}">
+    </div>
+  </div>
+
+  <!-- Buttons to cancel or save the form -->
+  <div class="form-group text-right">
+    <a href="/users" class="btn btn-outline-info">Cancel</a>
+    <button type="submit" class="btn btn-success">Save</button>
+  </div>
+
+</form>
+
+{% endblock %}
